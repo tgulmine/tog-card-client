@@ -1,7 +1,3 @@
-import * as React from 'react';
-import './styles/main.scss';
-import * as game from './game';
-
 import * as Colyseus from 'colyseus.js';
 
 var client = new Colyseus.Client('ws://localhost:2567');
@@ -19,15 +15,8 @@ const connect = async () => {
   }
 };
 
-const App: React.FC = () => {
-  connect();
+connect();
 
-  return (
-    <div>
-      <div className="App mt-2 text-2xl font-bold">Hello</div>
-      <div className="mt-2 text-gray-nanana">world!</div>
-    </div>
-  );
-};
-
-export default App;
+window.addEventListener('load', () => {
+  /* const game = new Phaser.Game(config) */
+});
