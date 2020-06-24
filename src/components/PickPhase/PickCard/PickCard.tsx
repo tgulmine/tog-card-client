@@ -1,6 +1,13 @@
 import * as React from 'react';
+import { PickRegularCard } from '../../../hooks/useInterface';
 
-const PickCard: React.FC = () => {
+interface PickCardProps {
+  card: PickRegularCard;
+}
+
+const PickCard: React.FC<PickCardProps> = props => {
+  const { card } = props;
+
   const cardWidth = 120;
   const cardHeight = 200;
 
@@ -12,7 +19,7 @@ const PickCard: React.FC = () => {
         height: cardHeight
       }}
     >
-      {/* asdasds */}
+      {card.regularCard.name}
     </div>
   );
 };
